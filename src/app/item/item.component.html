@@ -1,0 +1,31 @@
+<h2>Edit Exclusions</h2>
+<ul class="items">
+	<li *ngFor="let item of items" (click)="onSelect(item)" [class.selected]="item===selectedItem" >
+		{{item.startDate}} {{item.endDate}} {{item.airport}}
+	</li>
+</ul>
+
+
+<div *ngIf="selectedItem">
+
+	<h2>Edit selected item</h2>
+	<div>
+		<label>
+			Start Date: 
+			<input [(ngModel)]="selectedItem.startDate" placeholder="01/01/2017">
+		</label>
+	</div>
+	<div>
+		<label>
+			End Date: 
+			<input [(ngModel)]="selectedItem.endDate" placeholder="01/01/2017">
+		</label>
+	</div>
+	<div>
+		<label>
+			Start Date: 
+			<input [(ngModel)]="selectedItem.airport">
+		</label>
+	</div>
+
+</div>
